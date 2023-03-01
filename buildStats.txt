@@ -1,0 +1,82 @@
+12:32:13.503 [main] WARN  org.apache.hyracks.util.MXHelper - Failed setting up the methods to get the number of file descriptors through com.sun.management.internal.OperatingSystemImpl
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getOpenFileDescriptorCount() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @354fc8f0
+	at java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340) ~[?:?]
+	at java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280) ~[?:?]
+	at java.lang.reflect.Method.checkCanSetAccessible(Method.java:198) ~[?:?]
+	at java.lang.reflect.Method.setAccessible(Method.java:192) ~[?:?]
+	at org.apache.hyracks.util.MXHelper.<clinit>(MXHelper.java:55) [classes/:?]
+	at org.apache.hyracks.control.nc.NodeControllerService.<init>(NodeControllerService.java:222) [classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.init(AsterixHyracksIntegrationUtil.java:154) [test-classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.run(AsterixHyracksIntegrationUtil.java:383) [test-classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.main(AsterixHyracksIntegrationUtil.java:110) [test-classes/:?]
+12:32:14.517 [main] WARN  org.apache.asterix.hyracks.bootstrap.ApplicationConfigurator - JRE version "11.0.11" is untested
+12:32:14.711 [main] INFO  org.apache.hyracks.util.LoggingConfigUtil - Setting org.apache.asterix log level to INFO
+12:32:14.716 [main] INFO  org.apache.asterix.hyracks.bootstrap.CCApplication - Starting Asterix cluster controller
+12:32:16.200 [ActiveNotificationHandler] INFO  org.apache.hyracks.api.util.SingleThreadEventProcessor - Started ActiveNotificationHandler
+12:32:16.282 [main] INFO  org.apache.asterix.metadata.bootstrap.AsterixStateProxy - Asterix Distributed State Proxy Bound
+12:32:16.327 [main] INFO  org.apache.asterix.hyracks.bootstrap.ClusterLifecycleListener - Starting cluster event handler
+12:32:16.352 [main] INFO  org.apache.hyracks.control.cc.ClusterControllerService - Started ClusterControllerService
+12:32:16.356 [main] INFO  org.apache.hyracks.util.ExitUtil - successfully registered shutdown hook Thread[ShutdownHook-ClusterControllerService,5,main]
+12:32:16.359 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.control.nc.NodeControllerService - Starting NodeControllerService
+12:32:16.472 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.util.trace.Tracer - Initialize Tracer org.apache.hyracks.util.trace.Tracer.Traces.asterix_nc1
+{"name":"Trace-Start","cat":"Tracer","ph":"i","pid":"43900","tid":46,"ts":1676665936488017,"s":"p","args":{"datetime":"2023-02-17T12:32:16.482-08:00"}}
+12:32:16.488 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.util.trace.Tracer - Set categories for Tracer org.apache.hyracks.util.trace.Tracer.Traces.asterix_nc1 to []
+12:32:16.489 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.util.LoggingConfigUtil - org.apache.hyracks log level is INFO
+12:32:16.489 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.util.LoggingConfigUtil - org.apache.asterix log level is INFO
+12:32:16.489 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.hyracks.bootstrap.ApplicationConfigurator - Found JRE version 11.0.11
+12:32:16.489 [IntegrationUtil-asterix_nc1] WARN  org.apache.asterix.hyracks.bootstrap.ApplicationConfigurator - JRE version "11.0.11" is untested
+12:32:16.497 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.hyracks.bootstrap.NCApplication - Starting Asterix node controller: asterix_nc1
+12:32:16.503 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.common.config.PropertiesAccessor - configured partitions: {asterix_nc1=[ID:0, Original Node: asterix_nc1, IODevice: 0, Active Node: null, Pending Activation: false, ID:1, Original Node: asterix_nc1, IODevice: 1, Active Node: null, Pending Activation: false, ID:2, Original Node: asterix_nc1, IODevice: 2, Active Node: null, Pending Activation: false, ID:3, Original Node: asterix_nc1, IODevice: 3, Active Node: null, Pending Activation: false]} from config org.apache.hyracks.control.common.config.ConfigManager$2@34c2aadc
+12:32:16.656 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.app.nc.TransactionSubsystem - Checkpoint Properties: {"class" : "CheckpointProperties", "checkpoint-dir-path" : "target/tmp/asterix_nc1/txnlog", "lsn-threshold" : 67108864, "poll-frequency" : 120, "history-to-keep" : 2, "dataset-checkpoint-interval" : 3600}
+12:32:16.662 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Checkpoint directory = target/tmp/asterix_nc1/txnlog
+12:32:16.662 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Checkpoint directory target/tmp/asterix_nc1/txnlog/ didn't exist. Creating one
+12:32:16.663 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Getting latest checkpoint
+12:32:16.664 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Listing of files in the checkpoint dir returned empty
+12:32:16.671 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.logging.LogManager - the log dir (target/tmp/asterix_nc1/txnlog) is empty. returning empty list
+12:32:16.714 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.logging.LogManager - Created log file target/tmp/asterix_nc1/txnlog/transaction_log_0
+12:32:16.714 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.logging.LogManager - initializing log anchor with log file Id: 0 at offset: 0
+12:32:16.716 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.logging.LogManager - LogManager starts logging in LSN: 0
+12:32:16.727 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Getting latest checkpoint
+12:32:16.728 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Listing of files in the checkpoint dir returned empty
+12:32:16.729 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.app.nc.RecoveryManager - The checkpoint file doesn't exist: systemState = PERMANENT_DATA_LOSS
+12:32:16.730 [IntegrationUtil-asterix_nc1] WARN  org.apache.asterix.app.nc.NCAppRuntimeContext - Deleting the storage dir. initialRun = false, systemState = PERMANENT_DATA_LOSS
+12:32:16.732 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.app.nc.NCAppRuntimeContext - The value of maxScheduledFlushes is not provided. Setting maxConcurrentFlushes = 4.
+12:32:16.839 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Getting latest checkpoint
+12:32:16.839 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Listing of files in the checkpoint dir returned empty
+12:32:16.839 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Getting latest checkpoint
+12:32:16.839 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.transaction.management.service.recovery.AbstractCheckpointManager - Listing of files in the checkpoint dir returned empty
+12:32:16.839 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.app.nc.RecoveryManager - The checkpoint file doesn't exist: systemState = PERMANENT_DATA_LOSS
+12:32:16.840 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.hyracks.bootstrap.NCApplication - System state: PERMANENT_DATA_LOSS
+12:32:16.846 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.hyracks.bootstrap.NCApplication - Node ID: asterix_nc1
+12:32:16.846 [IntegrationUtil-asterix_nc1] INFO  org.apache.asterix.hyracks.bootstrap.NCApplication - Stores: {asterix_nc1=[target/io/dir/asterix_nc1/target/tmp/asterix_nc1/iodevice1/storage, target/io/dir/asterix_nc1/target/tmp/asterix_nc1/iodevice2/storage, target/io/dir/asterix_nc1/target/tmp/asterix_nc1/iodevice3/storage, target/io/dir/asterix_nc1/target/tmp/asterix_nc1/iodevice4/storage]}
+12:32:21.647 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.control.nc.NodeControllerService - addCc: localhost/127.0.0.1:1099
+12:32:21.683 [IntegrationUtil-asterix_nc1] INFO  org.apache.hyracks.control.nc.NodeControllerService - Registering with Cluster Controller ClusterControllerRemoteProxy [localhost/127.0.0.1:1099]
+12:32:21.764 [Worker:ClusterController] INFO  org.apache.hyracks.control.cc.work.RegisterNodeWork - registering node: asterix_nc1
+12:32:21.795 [Worker:ClusterController] WARN  org.apache.hyracks.control.cc.cluster.NodeManager - +addNode: asterix_nc1
+12:32:21.797 [Worker:ClusterController] INFO  org.apache.hyracks.control.cc.cluster.NodeManager - adding node to registry
+12:32:21.799 [Worker:ClusterController] INFO  org.apache.hyracks.control.cc.cluster.NodeManager - updating cluster capacity
+12:32:21.802 [Worker:ClusterController] INFO  org.apache.hyracks.control.cc.work.RegisterNodeWork - registered node: asterix_nc1
+12:32:21.804 [Worker:ClusterController] INFO  org.apache.asterix.hyracks.bootstrap.ClusterLifecycleListener - NC: asterix_nc1 joined
+12:32:21.805 [Worker:ClusterController] INFO  org.apache.asterix.runtime.utils.ClusterStateManager - Registering configuration parameters for node id asterix_nc1
+12:32:21.842 [ShutdownHook-ClusterControllerService] INFO  org.apache.hyracks.control.common.ControllerShutdownHook - Shutdown hook called
+12:32:21.842 [Thread-0] INFO  org.apache.hyracks.control.cc.ClusterControllerService - Stopping ClusterControllerService
+12:32:21.848 [Thread-0] INFO  org.apache.asterix.hyracks.bootstrap.CCApplication - Stopping Asterix cluster controller
+12:32:21.849 [ShutdownHook-ClusterControllerService] INFO  org.apache.hyracks.control.cc.ClusterControllerService - Stopping ClusterControllerService
+12:32:21.851 [ShutdownHook-ClusterControllerService] INFO  org.apache.asterix.hyracks.bootstrap.CCApplication - Stopping Asterix cluster controller
+12:32:21.851 [Thread-0] INFO  org.apache.asterix.runtime.utils.ClusterStateManager - updating cluster state from UNUSABLE to SHUTTING_DOWN
+12:32:21.852 [Thread-0] INFO  org.apache.asterix.runtime.utils.ClusterStateManager - Cluster State is now SHUTTING_DOWN
+12:32:21.852 [ShutdownHook-ClusterControllerService] INFO  org.apache.asterix.runtime.utils.ClusterStateManager - ignoring update to same cluster state of SHUTTING_DOWN
+12:32:21.859 [ActiveNotificationHandler] WARN  org.apache.hyracks.api.util.SingleThreadEventProcessor - Stopped ActiveNotificationHandler
+12:32:21.873 [ShutdownHook-ClusterControllerService] INFO  org.apache.asterix.metadata.bootstrap.AsterixStateProxy - Asterix Distributed State Proxy Unbound
+12:32:21.875 [Thread-0] WARN  org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.LoggerHolder - Unexpected exception on shutdown
+java.rmi.NoSuchObjectException: object not exported
+	at sun.rmi.transport.ObjectTable.unexportObject(ObjectTable.java:151) ~[?:?]
+	at java.rmi.server.UnicastRemoteObject.unexportObject(UnicastRemoteObject.java:457) ~[?:?]
+	at org.apache.asterix.metadata.bootstrap.AsterixStateProxy.unregisterRemoteObject(AsterixStateProxy.java:63) ~[classes/:?]
+	at org.apache.asterix.hyracks.bootstrap.CCApplication.stop(CCApplication.java:252) ~[classes/:?]
+	at org.apache.hyracks.control.cc.ClusterControllerService.stopApplication(ClusterControllerService.java:354) ~[classes/:?]
+	at org.apache.hyracks.control.cc.ClusterControllerService.stop(ClusterControllerService.java:338) ~[classes/:?]
+	at org.apache.hyracks.control.cc.ClusterControllerService.stop(ClusterControllerService.java:332) ~[classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.stopCC(AsterixHyracksIntegrationUtil.java:315) ~[test-classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil.deinit(AsterixHyracksIntegrationUtil.java:304) ~[test-classes/:?]
+	at org.apache.asterix.api.common.AsterixHyracksIntegrationUtil$4.run(AsterixHyracksIntegrationUtil.java:376) [test-classes/:?]
