@@ -86,6 +86,48 @@ Here are steps to get AsterixDB running on your local machine:
 
 * Read more [documentation](https://ci.apache.org/projects/asterixdb/index.html) to learn the data model, query language, and how to create a cluster instance.
 
+## Scheduler Setup:
+In order to run AsterixDB with a desired scheduler, please apply the following changes under the [cc] section of cc.conf file that is used by AsterixDB. Please note that depending on how you deploy and run AsterixDB, you may have a different cc.conf. Please apply these changes to the cc.conf file that your way of deployment is using.
+
+### FIFO_Ordered Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManager
+job.queue.class=org.apache.hyracks.control.cc.scheduler.FIFOJobQueue
+
+
+### FIFO_SemiOrdered Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.FIFOOrderedJobQueue
+
+
+### Wisconsin_V1 Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.Wisconsin_V3
+
+### Wisconsin_V2 Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.Wisconsin_V2
+
+### Wisconsin_V3 Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.Wisconsin_V3
+
+### Colorado_V1 Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.Colorado_V1
+
+### Colorado_V2 Scheduler
+
+job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
+job.queue.class=org.apache.hyracks.control.cc.scheduler.Colorado_V2
+
+
+
 ## Documentation
 
 To generate the documentation, run asterix-doc with the generate.rr profile in maven, e.g  `mvn -Pgenerate.rr ...`
