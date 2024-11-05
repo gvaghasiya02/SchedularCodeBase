@@ -92,6 +92,7 @@ In order to run AsterixDB with a desired scheduler, please apply the following c
 ### FIFO_SemiOrdered Scheduler
 
 job.manager.class=org.apache.hyracks.control.cc.job.JobManager
+
 job.queue.class=org.apache.hyracks.control.cc.scheduler.FIFOJobQueue
 
 
