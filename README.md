@@ -89,13 +89,13 @@ Here are steps to get AsterixDB running on your local machine:
 ## Scheduler Setup:
 In order to run AsterixDB with a desired scheduler, please apply the following changes under the [cc] section of cc.conf file that is used by AsterixDB. Please note that depending on how you deploy and run AsterixDB, you may have a different cc.conf. Please apply these changes to the cc.conf file that your way of deployment is using.
 
-### FIFO_Ordered Scheduler
+### FIFO_SemiOrdered Scheduler
 
 job.manager.class=org.apache.hyracks.control.cc.job.JobManager
 job.queue.class=org.apache.hyracks.control.cc.scheduler.FIFOJobQueue
 
 
-### FIFO_SemiOrdered Scheduler
+### FIFO_Ordered Scheduler
 
 job.manager.class=org.apache.hyracks.control.cc.job.JobManagerNoLineSkip
 job.queue.class=org.apache.hyracks.control.cc.scheduler.FIFOOrderedJobQueue
