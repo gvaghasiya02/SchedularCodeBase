@@ -18,7 +18,6 @@
  */
 package org.apache.hyracks.control.cc.scheduler;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -377,7 +376,7 @@ public class Wisconsin_V2 implements IJobQueue {
     public void cancel(JobId jobId) {
         JobSpecification.JobSizeTag sizeTag = jobIdJobSizeTagMap.get(jobId);
         MPLQueue queue = getQueue(sizeTag);
-        if (queue!=null)
+        if (queue != null)
             queue.currentMPL--;
     }
 
