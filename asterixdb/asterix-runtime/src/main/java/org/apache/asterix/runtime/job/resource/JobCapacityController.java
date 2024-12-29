@@ -92,7 +92,7 @@ public class JobCapacityController implements IJobCapacityController {
     @Override
     public void setJobSizeTag(JobSpecification job) {
         double memRatio = getMemoryRatio(job);
-        LOGGER.warn(memRatio);
+        LOGGER.warn("MemoryRatio " + memRatio);
         if (memRatio <= 0.05) {
             String uid = job.getUserID();
             if (uid != null) {
