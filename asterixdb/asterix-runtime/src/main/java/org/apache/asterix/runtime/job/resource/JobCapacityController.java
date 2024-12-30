@@ -73,7 +73,7 @@ public class JobCapacityController implements IJobCapacityController {
         IClusterCapacity requiredCapacity = job.getRequiredClusterCapacity();
         long reqAggregatedMemoryByteSize = requiredCapacity.getAggregatedMemoryByteSize();
         int reqAggregatedNumCores = requiredCapacity.getAggregatedCores();
-        LOGGER.warn("Job " + job.getSizeTag() + " is finishing...Required Resources: "
+        LOGGER.warn("Job " + job.getSizeTag() + " is finishing...RequiredResources: "
                 + (double) reqAggregatedMemoryByteSize / 1024 / 1024 + " MB of memory and " + reqAggregatedNumCores
                 + " CPU cores.");
         IClusterCapacity currentCapacity = resourceManager.getCurrentCapacity();
